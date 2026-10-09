@@ -73,7 +73,7 @@ function Navbar() {
 
       {/* Modern Animated Mobile Drawer */}
       <div
-        className={`fixed top-16.25 left-0 right-0 bg-neutral-900/95 backdrop-blur-xl z-50 border-b border-white/10 md:hidden transition-all duration-300 ease-in-out origin-top ${
+        className={`fixed top-16.25 left-0 right-0 bg-neutral-900 backdrop-blur-xl z-50 border-b border-white/10 md:hidden transition-all duration-300 ease-in-out origin-top ${
           isMenuOpen
             ? "opacity-100 scale-y-100 translate-y-0"
             : "opacity-0 scale-y-95 -translate-y-4 pointer-events-none"
