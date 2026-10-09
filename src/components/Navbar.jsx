@@ -52,7 +52,10 @@ function Navbar() {
             <FaTwitter />
           </a>
         </div>
-        <button className="hidden md:block font-medium bg-orange-500 rounded px-6 py-2 hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in cursor-pointer">
+        {/* <button className="hidden md:block font-medium bg-orange-500 rounded px-6 py-2 hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in cursor-pointer">
+          Login
+        </button> */}
+        <button className="hidden md:block font-medium rounded px-6 py-2 bg-orange-500 hover:bg-orange-600  transition-all duration-200 ease-in shadow-lg shadow-orange-500/25 cursor-pointer">
           Login
         </button>
 
