@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function SideBar() {
   const [popularBlogs, setPopularBlogs] = useState([]);
   useEffect(() => {
-    fetch("../api/blogsData.json")
+    fetch("/blogsData.json")
       .then((res) => res.json())
       .then((data) => setPopularBlogs(data.slice(0, 15)));
   }, []);

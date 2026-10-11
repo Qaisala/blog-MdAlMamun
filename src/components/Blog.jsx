@@ -14,7 +14,7 @@ function Blog() {
   useEffect(() => {
     async function fetchBlogs() {
       // ✅ 1. Use absolute path starting with "/" for Vercel/Vite compatibility
-      let url = "../api/blogsData.json"; 
+      let url = "/blogsData.json"; 
       try {
         const response = await fetch(url);
         const data = await response.json();

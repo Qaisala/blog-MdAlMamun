@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         element: <SingleBlog />,
         loader: async ({ params }) => {
           // 1. Fetch the entire array of blogs
-          const res = await fetch("../api/blogsData.json");
+          const res = await fetch("/blogsData.json");
           const blogs = await res.json();
 
           // 2. Find the specific blog matching the URL id
