@@ -9,7 +9,11 @@ function BlogCards({ blogs, currentPage, selectedCategory, pageSize }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       {filteredBlogs.map((item) => (
-        <Link key={item.id} className="p-5 shadow-lg rounded cursor-pointer">
+        <Link
+          to={`/blogs/${item.id}`} // For "SingleBlog" component
+          key={item.id}
+          className="p-5 shadow-lg rounded cursor-pointer"
+        >
           <div>
             <img src={item.image} className="w-full" />
           </div>

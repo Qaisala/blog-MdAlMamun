@@ -3,7 +3,7 @@ import React from "react";
 function CategorySelection({ handleCategoryChange, activeCategory }) {
   const categories = ["Startups", "Security", "AI", "Apps", "Tech"];
   return (
-    <div className="px-4 mb-8 flex flex-wrap lg:gap-16 items-center border-b-2 py-5 text-gray-900 font-semibold">
+    <div className="px-4 mb-8 flex flex-wrap gap-4 lg:gap-16 items-center border-b-2 py-5 text-gray-900 font-semibold">
       <button
         className={`lg:ml-12 cursor-pointer ${activeCategory ? "" : "active-button"}`}
         onClick={() => handleCategoryChange(null)}

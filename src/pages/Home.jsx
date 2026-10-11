@@ -7,9 +7,9 @@ function Home() {
     <div>
       <Banner/>
 
-      {/* <div className='max-w-7xl mx-auto'>
+      <div className='max-w-7xl mx-auto'>
         <Blog/>
-      </div> */}
+      </div>
     </div>
   )
 }
