@@ -13,37 +13,34 @@ function Blog() {
 
   useEffect(() => {
     async function fetchBlogs() {
-      let url = `../api/blogsData.json?page=${currentPage}&limit=${pageSize}`;
+      // ✅ 1. Use absolute path starting with "/" for Vercel/Vite compatibility
+      let url = "/api/blogsData.json"; 
       try {
-        // filter by Category
-        if (selectedCategory) {
-          url += `&category=${selectedCategory}`;
-        }
         const response = await fetch(url);
         const data = await response.json();
-        // console.log(data);
-        setBlogs(data);
+        setBlogs(data); // Stores the full array of blogs
       } catch (error) {
         console.error("Error fetching blogs:", error);
       }
     }
     fetchBlogs();
-  }, [currentPage, pageSize, selectedCategory]);
+  }, []); // ✅ Fetch once on mount, client-side handles pagination & category state
 
-  // Page Changing button
-  //   const handlePageChange = (pageNumber) => {
-  //     setCurrentPage = pageNumber;
-  //   };
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  //
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
-    setCurrentPage(1);
+    setCurrentPage(1); // Reset to page 1 on category change
     setActiveCategory(category);
   };
+
+  // Filter blogs based on category for the pagination count
+  const filteredBlogs = blogs.filter(
+    (item) => !selectedCategory || item.category === selectedCategory
+  );
+
   return (
     <div>
       {/* Category Section */}
@@ -75,7 +72,7 @@ function Blog() {
       <div className="py-5">
         <Pagination
           handlePageChange={handlePageChange}
-          blogs={blogs}
+          blogs={filteredBlogs} // ✅ Pass filtered blogs so totalPages calculates correctly
           currentPage={currentPage}
           pageSize={pageSize}
         />
